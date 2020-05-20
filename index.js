@@ -1,11 +1,11 @@
 var test;
-var gravitationalMagnitude = 6;
+var gravitationalMagnitude = .7;
 
 function setup() 
 {
   createCanvas(windowWidth, windowHeight);
 
-  test = new Particle(width/2, height/2, 2);
+  test = new Firework(new Particle(width/2, height, 20), color(0, 255, 0));
 }
 
 function draw()
@@ -14,7 +14,5 @@ function draw()
 
   fill(255, 0, 0);
 
-  ellipse(test.position.x, test.position.y, 4);
-  test.update();
-
+  test.draw();
 }

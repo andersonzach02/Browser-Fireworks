@@ -4,11 +4,13 @@ class Particle {
     {
         this.position = createVector(xLocation, yLocation);
         this.velocity = createVector(0, -velocity);
+        this.acceleration = createVector(0, gravitationalMagnitude);
     }
 
     update()
     {
         this.position.add(this.velocity);
+        this.velocity.add(this.acceleration);
     }
 
     getXPos()
