@@ -5,7 +5,7 @@ function setup()
 {
   createCanvas(windowWidth, windowHeight);
 
-  test = new Firework(new Particle(width/2, height, 20), color(0, 255, 0));
+  test = new Firework(new Particle(width/2, height, 26), color(0, 255, 0));
 }
 
 function draw()

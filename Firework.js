@@ -10,7 +10,7 @@ class Firework
     draw()
     {
         fill(this.sparkColor);
-        ellipse(this.firework.position.x, this.firework.position.y, 4);
+        ellipse(this.firework.position.x, this.firework.position.y, 8);
         this.firework.update();
     }
 
