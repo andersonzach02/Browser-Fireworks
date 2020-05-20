@@ -1,0 +1,10 @@
+class Firework
+{
+
+    constructor()
+    {
+
+    }
+
+
+}
