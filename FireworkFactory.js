@@ -22,13 +22,17 @@ class FireworkFactory
             
             currentFirework.draw();
 
-            if(currentFirework.exploded)
-            {
-                if(alpha(currentFirework.sparks[0].sparkColor) <= 0)
-                {
-                    this.fireworksDisplay.splice(index, 1);
-                }
-            }
+            this.removeFireworkIfDead(currentFirework), index;
+        }
+    }
+
+    removeFireworkIfDead(currentFirework, index)
+    {
+        let numberOfFireworksToRemove = 1;
+
+        if(currentFirework.fizzledOut)
+        {
+            this.fireworksDisplay.splice(index, numberOfFireworksToRemove);
         }
     }
 
@@ -44,5 +48,4 @@ class FireworkFactory
 
         this.fireworksDisplay[index] = new Firework(newFireworkParticle, fireworkColor);
     }
-
 }
