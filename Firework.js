@@ -1,12 +1,11 @@
 class Firework
 {
-
     constructor(fireworkParticle, fireworkColor)
     {
         this.firework = fireworkParticle;
         this.sparkColor = fireworkColor;
         this.sparks = [];
-
+        this.exploded = false;
     }
 
     draw()
@@ -14,7 +13,7 @@ class Firework
         if(this.firework.velocity.y <= 0)
         {
             fill(this.sparkColor);
-            ellipse(this.firework.position.x, this.firework.position.y, 8);
+            ellipse(this.firework.position.x, this.firework.position.y, FIREWORK_SIZE);
             this.firework.update();
         }
         else
@@ -25,9 +24,13 @@ class Firework
 
     explode()
     {
-        if(this.sparks.length != 100)
+        const MAX_NUM_OF_SPARKS = 50;
+
+        this.exploded = true;
+
+        if(this.sparks.length != MAX_NUM_OF_SPARKS)
         {
-            for (let index = 0; index < 100; index++)
+            for (let index = 0; index < MAX_NUM_OF_SPARKS; index++)
             {
                 let sparkParticle = new SparkParticle(this.firework.position.x, this.firework.position.y);
                 this.sparks[index] = new FireworkSpark(sparkParticle, this.sparkColor);

@@ -1,18 +1,20 @@
 var test;
 var gravitationalForce = .7;
+const FIREWORK_SIZE = 8;
+const SPARK_SIZE = 4;
 
 function setup() 
 {
   createCanvas(windowWidth, windowHeight);
 
-  test = new Firework(new FireworkParticle(width/2, height, 26), color(0, 255, 0));
+  display = new FireworkFactory();
+
 }
 
 function draw()
 {
   background(0);
 
-  fill(255, 0, 0);
-
-  test.draw();
+  display.generateDisplay();
+  display.display();
 }
